@@ -16,3 +16,4 @@ class Game:
     def run(self):
         used_letters = []
         while True:
+            pass
