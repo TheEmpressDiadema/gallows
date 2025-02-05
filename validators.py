@@ -14,7 +14,10 @@ class IngameValidator:
         return True
     
     def validate_len(self, user_input: str):
-        if len(user_input) != 1:
+        if len(user_input) > 1:
             print("Вы ввели более одной буквы\n")
+            return False
+        if len(user_input) < 1:
+            print("Вы ввели меньше одной буквы")
             return False
         return True
