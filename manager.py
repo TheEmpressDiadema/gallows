@@ -20,8 +20,7 @@ class GameManager:
         self._word_list = _load_words(config.NORMAL_PATH)
 
     def run_game(self):
-        game = Game()
-        game.setup(self._word_list)
+        game = Game(self._word_list)
         game.run()
 
     def set_difficulty(self):
