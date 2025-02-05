@@ -1,4 +1,3 @@
-
 class IngameValidator:
     def validate_used(self, used_letters: list[str], user_input: str):
         if user_input in used_letters:
