@@ -1,4 +1,5 @@
 class Word:
+    
     def __init__(self, word):
         self._hidden_word = word
         self._len = len(self._hidden_word)

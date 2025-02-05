@@ -5,6 +5,7 @@ from enums import Difficulties
 from validators import IngameValidator
 
 def _load_words(path: str):
+
     try:
         with open(path, "r", encoding="utf-8") as words_file:
             lines = words_file.readlines()
@@ -16,15 +17,19 @@ def _load_words(path: str):
         print(f"Файл {path} не найден.")
 
 class GameManager:
+
     def __init__(self):
+
         self._word_list = _load_words(config.NORMAL_PATH)
 
     def run_game(self):
+
         game = Game(IngameValidator(), self._word_list,
                     config.START_STAGE, config.MAX_STAGE)
         game.run()
 
     def set_difficulty(self):
+
         while True:
             match input():
                 case Difficulties.EASY.value:

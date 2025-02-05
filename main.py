@@ -3,6 +3,7 @@ from manager import GameManager
 from menu import Menu, DifficultyMenu
 
 class Program:
+    
     def __init__(self):
         self._menu_view = Menu()
         self._difficulty_view = DifficultyMenu()

@@ -1,18 +1,19 @@
 class IngameValidator:
-    def validate_used(self, used_letters: list[str], user_input: str):
+    
+    def validate_used(self, used_letters: list[str], user_input: str) -> bool:
         if user_input in used_letters:
             print("Вы уже вводили эту букву\n")
             return False
         return True
     
-    def validate_alpha(self, user_input: str):
+    def validate_alpha(self, user_input: str) -> bool:
         alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
         if not user_input in alphabet:
             print("Алфавит эксепшон\n")
             return False
         return True
     
-    def validate_len(self, user_input: str):
+    def validate_len(self, user_input: str) -> bool:
         if len(user_input) > 1:
             print("Вы ввели более одной буквы\n")
             return False
