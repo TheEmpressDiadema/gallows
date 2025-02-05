@@ -2,7 +2,8 @@ class Word:
     def __init__(self, word):
         self._hidden_word = word
         self._len = len(self._hidden_word)
-        self._state = ['X']*self._len
+        self._filler = 'X'
+        self._state = [self._filler]*self._len
 
     @property
     def word(self):
@@ -18,4 +19,4 @@ class Word:
                 self._state[index] = self.word[index]
 
     def is_fully_revealed(self):
-        return self._state.count("X") == 0
+        return self._state.count(self._filler) == 0
