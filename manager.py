@@ -1,4 +1,3 @@
-import sys
 import config
 
 from game import Game
