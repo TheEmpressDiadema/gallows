@@ -66,5 +66,5 @@ class Gallows:
     ]
 
     @classmethod
-    def get_stage(cls, mistake_num: int):
-        print(cls._stages[mistake_num - 1])
+    def print_stage(cls, stage: int):
+        print(cls._stages[stage])

@@ -7,7 +7,7 @@ class Word:
     @property
     def word(self):
         return self._hidden_word
-
+    
     @property
     def state(self):
         return "".join(self._state)
@@ -16,3 +16,6 @@ class Word:
         for index in range(self._len):
             if self.word[index] == user_input:
                 self._state[index] = self.word[index]
+
+    def is_fully_revealed(self):
+        return self._state.count("X") == 0
