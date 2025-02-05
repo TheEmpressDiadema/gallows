@@ -18,7 +18,7 @@ class Program:
                     self._difficulty_view.print()
                     manager.set_difficulty()
                 case MenuElements.QUIT.value:
-                    manager.quit()
+                    break
                 case _:
                     print("Неверный ввод пункта меню\n")
                     continue

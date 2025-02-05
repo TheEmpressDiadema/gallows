@@ -38,6 +38,3 @@ class GameManager:
                    print("Неверный ввод пункта меню\n")
                    continue
             break
-    
-    def quit(self):
-        sys.exit(0)
