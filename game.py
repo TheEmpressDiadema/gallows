@@ -13,7 +13,7 @@ class Game:
         self._used_letters = []
         self._validator = IngameValidator()
         self._stage = 0
-        self._max_stages = 5
+        self._max_stages = 6
 
     def run(self):
         while True:
@@ -32,7 +32,7 @@ class Game:
         self._gallows.print_stage(self._stage)
         print(f"Состояние отгадвания =) {self._word.state}")
         print(f"Использованные буквы: {','.join(self._used_letters)}")
-        print(f"Осталось попыток: {self._stage}")
+        print(f"Осталось попыток: {self._max_stages - self._stage}")
 
     def _validate_input(self, user_input: str) -> bool:
         is_valid = self._validator.validate_alpha(user_input)
