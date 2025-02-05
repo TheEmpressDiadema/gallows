@@ -8,9 +8,9 @@ class Program:
         self._difficulty_view = DifficultyMenu()
 
     def run(self):
+        manager = GameManager()
         while True:
             self._menu_view.print()
-            manager = GameManager()
             match input():
                 case MenuElements.START.value:
                     manager.run_game()
