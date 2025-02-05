@@ -43,7 +43,7 @@ class Game:
     def _process_input(self) -> str:
         user_input = input("Введите букву: ").lower()
         while not self._validate_input(user_input):
-            user_input = input("Введите букву: ")
+            user_input = input("Введите букву: ").lower()
         return user_input
 
     def _run_round(self):
