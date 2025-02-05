@@ -3,17 +3,15 @@ import random
 from word import Word
 from gallows import Gallows
 from validators import IngameValidator
-
-
 class Game:
 
-    def __init__(self, words: list[str]):
+    def __init__(self, validator: IngameValidator, words: list[str], 
+                 start_stage: int, max_stages: int):
+        self._validator = validator
+        self._stage = start_stage
+        self._max_stages = max_stages
         self._word = Word(random.choice(words))
-        self._gallows = Gallows()
         self._used_letters = []
-        self._validator = IngameValidator()
-        self._stage = 0
-        self._max_stages = 6
 
     def run(self):
         while True:
@@ -23,13 +21,13 @@ class Game:
                 print(f"Загаданное слово: {self._word.word}")
                 break
             if self._stage == self._max_stages:
-                self._gallows.print_stage(self._stage)
+                Gallows.print_stage(self._stage)
                 print("Вы проиграли")
                 print(f"Загаданное слово: {self._word.word}")
                 break
 
     def _print_status(self):
-        self._gallows.print_stage(self._stage)
+        Gallows.print_stage(self._stage)
         print(f"Состояние отгадвания =) {self._word.state}")
         print(f"Использованные буквы: {','.join(self._used_letters)}")
         print(f"Осталось попыток: {self._max_stages - self._stage}")
