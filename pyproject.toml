@@ -7,7 +7,9 @@ authors = [
     { name = "TheEmpressDiadema", email = "mauhkpaffftep@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "black>=25.12.0",
+]
 
 [project.scripts]
 gallows = "gallows:main"

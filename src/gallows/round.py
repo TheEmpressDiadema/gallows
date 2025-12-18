@@ -2,8 +2,9 @@ from gallows.config import MAX_MISTAKE_COUNT
 from gallows.manager import RoundManager
 from gallows.validator import RoundInputValidator
 
+
 class Round:
-    
+
     def __init__(self, word_list: list[str]):
         self._word_list = word_list
         self._round_manager = RoundManager()
@@ -15,7 +16,9 @@ class Round:
         self._mask = self._round_manager.create_mask(self._word)
 
     def _proceed_round(self, user_input: str, mistake_count: int):
-        is_revealed = self._round_manager.reveal_letter(self._mask, self._word, user_input)
+        is_revealed = self._round_manager.reveal_letter(
+            self._mask, self._word, user_input
+        )
         match self._round_manager.get_status(self._mask, mistake_count):
             case 1:
                 print(f"Вы выиграли, загаданное слово: {self._word}")
@@ -27,7 +30,7 @@ class Round:
                 else:
                     print("Нет такой буквы")
                     print(f"Ошибок осталось:{MAX_MISTAKE_COUNT - mistake_count - 1}")
-                    self.run(mistake_count+1)
+                    self.run(mistake_count + 1)
 
     def run(self, mistake_count: int = 0):
         try:

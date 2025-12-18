@@ -1,5 +1,6 @@
 from abc import ABC
 
+
 class Validator(ABC):
 
     _alphabet: str
@@ -9,10 +10,12 @@ class Validator(ABC):
             raise ValueError("Длина ввода не соответствует требуемой: 1")
         if user_input not in self._alphabet:
             raise ValueError("Введена буква другого алфавита")
-        
+
+
 class MenuInputValidator(Validator):
 
     _alphabet: str = "12"
+
 
 class RoundInputValidator(Validator):
 

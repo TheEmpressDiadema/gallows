@@ -5,6 +5,7 @@ from gallows.menu import Menu
 from gallows.round import Round
 from gallows.validator import MenuInputValidator
 
+
 class Game:
 
     def __init__(self):
@@ -15,14 +16,13 @@ class Game:
     def _load_words(self) -> list[str]:
         with open(WORDS_PATH, encoding="utf-8") as words_file:
             return [word[:-1] for word in words_file.readlines()]
-    
+
     def _process_input(self, user_input: str):
         if user_input == "1":
             round = Round(self._words)
             round.run()
         else:
             sys.exit(0)
-        
 
     def __call__(self):
         while True:
