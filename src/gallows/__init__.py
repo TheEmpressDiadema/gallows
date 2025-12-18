@@ -1,4 +1,4 @@
-from gallows.game import Game
+from gallows.game.game import Game
 
 
 def main() -> None:
