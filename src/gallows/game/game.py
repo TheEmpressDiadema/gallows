@@ -1,5 +1,3 @@
-import sys
-
 from gallows.config.config import WORDS_PATH
 from gallows.presentation.menu import Menu
 from gallows.game.round import Round
@@ -17,19 +15,16 @@ class Game:
         with open(WORDS_PATH, encoding="utf-8") as words_file:
             return [word[:-1] for word in words_file.readlines()]
 
-    def _process_input(self, user_input: str):
-        if user_input == "1":
-            round = Round(self._words)
-            round.run()
-        else:
-            sys.exit(0)
-
     def __call__(self):
         while True:
             self._menu.print_view()
             try:
                 user_input = input().strip().lower()
                 self._menu_input_validator.validate(user_input)
-                self._process_input(user_input)
+                if user_input == "1":
+                    round = Round(self._words)
+                    round.run()
+                else:
+                    break
             except ValueError as error:
                 print(error)
